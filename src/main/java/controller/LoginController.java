@@ -19,13 +19,11 @@ public class LoginController extends HttpServlet {
 	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("aaaaaaaaaa");
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		System.out.println("aaaa" + username + password );
 		UserModel userModel = new UserModel();
 		userModel.setNameUser(username);
 		userModel.setPassword(password);

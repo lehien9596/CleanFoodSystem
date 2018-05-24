@@ -158,6 +158,14 @@
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
   <servlet>
+    <servlet-name>RegisterController</servlet-name>
+    <servlet-class>controller.RegisterController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterController</servlet-name>
+    <url-pattern>/register</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>ShowTemController</servlet-name>
     <servlet-class>controller.ShowTemController</servlet-class>
   </servlet>
