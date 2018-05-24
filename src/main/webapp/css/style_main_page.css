@@ -1,0 +1,10 @@
+.body_slider {
+	width: 100%;
+	
+}
+.border_round {
+    border: 2px solid #fff;
+    background-color: #C0EDBA;
+    border-radius: 6px;
+    padding: 5px;
+}

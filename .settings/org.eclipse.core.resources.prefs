@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+encoding//src/main/java/controller/FoodUpdateController.java=UTF-8
+encoding//src/main/java/controller/test.java=UTF-8
+encoding//src/main/java/dao/FoodDAO.java=UTF-8
+encoding//src/main/java/dao/ProviderDAO.java=UTF-8
+encoding//src/main/java/dao/UserDAO.java=UTF-8
+encoding//src/main/java/model/FoodDetailModel.java=UTF-8
+encoding//src/main/webapp/food_add.jsp=UTF-8
+encoding//src/main/webapp/food_detail_add.jsp=UTF-8
+encoding//src/main/webapp/food_update.jsp=UTF-8
+encoding//src/main/webapp/market_add.jsp=UTF-8
+encoding//src/main/webapp/market_update.jsp=UTF-8
+encoding//src/main/webapp/user_add.jsp=UTF-8
