@@ -16,10 +16,10 @@ import dao.FoodDetailDAO;
 import model.FoodDetailModel;
 import utils.Utils;
 
-public class FoodDetailController extends HttpServlet {
+public class FoodDetailProviderController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public FoodDetailController() {
+	public FoodDetailProviderController() {
 		super();
 	}
 
@@ -36,7 +36,7 @@ public class FoodDetailController extends HttpServlet {
 	private void loadDataWeb(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("id").toString());
-		String basePath = "foodDetail.jsp";
+		String basePath = "foodDetailProvider.jsp";
 		FoodDetailDAO dao = new FoodDetailDAO();
 		List<FoodDetailModel> listFootDetail = dao.getFoodDetail(id);
 		request.setAttribute("listFoodDetail", listFootDetail);

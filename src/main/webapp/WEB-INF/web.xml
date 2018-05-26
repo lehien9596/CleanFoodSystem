@@ -158,6 +158,38 @@
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
   <servlet>
+    <servlet-name>RegisterController</servlet-name>
+    <servlet-class>controller.RegisterController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterController</servlet-name>
+    <url-pattern>/register</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <servlet-name>FoodDetailProviderController</servlet-name>
+    <servlet-class>controller.FoodDetailProviderController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FoodDetailProviderController</servlet-name>
+    <url-pattern>/food_detail_provider</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>FoodProviderController</servlet-name>
+    <servlet-class>controller.FoodProviderController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FoodProviderController</servlet-name>
+    <url-pattern>/food_provider</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>FoodManageController</servlet-name>
+    <servlet-class>controller.FoodManageController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FoodManageController</servlet-name>
+    <url-pattern>/food_manage</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>ShowTemController</servlet-name>
     <servlet-class>controller.ShowTemController</servlet-class>
   </servlet>

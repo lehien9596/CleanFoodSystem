@@ -18,15 +18,17 @@ public class LoginController extends HttpServlet {
 	public LoginController() {
 		super();
 	}
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("aaaaaaaaaa");
 	}
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		System.out.println("aaaa" + username + password );
+		System.out.println("aaaa" + username + password);
 		UserModel userModel = new UserModel();
 		userModel.setNameUser(username);
 		userModel.setPassword(password);
@@ -38,13 +40,17 @@ public class LoginController extends HttpServlet {
 			case 0:
 				rd2 = request.getRequestDispatcher("trangchu.jsp");
 				break;
-			case 1 :
-				//call provider
-				rd2 =request.getRequestDispatcher("/provider");
+			case 1:
+				rd2 = request.getRequestDispatcher("food_provider");
+				request.setAttribute("role_value", 1);
 				break;
-			case 2 :
-				//Em làm tiếp nhé, anh mệt quá đi ngủ đây =)))
+			case 2:
+				rd2 = request.getRequestDispatcher("food_manage");
+				request.setAttribute("role_value", 2);
+				break;
 			default:
+				rd2 = request.getRequestDispatcher("food");
+				request.setAttribute("role_value", 0);
 				break;
 			}
 			rd2.forward(request, response);

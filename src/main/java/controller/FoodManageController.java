@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import dao.FoodDAO;
 import model.FoodModel;
 
-public class FoodController extends HttpServlet {
+public class FoodManageController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
@@ -31,8 +31,10 @@ public class FoodController extends HttpServlet {
 
 	private void loadDataWeb(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String basePath = "food.jsp";
-		request.setAttribute("role_value", 0);
+		String basePath = "food_manage.jsp";
+		Object obj = request.getAttribute("role_value");
+		int roleValue = Integer.parseInt(obj.toString());
+		request.setAttribute("role_value", roleValue);
 		FoodDAO dao = new FoodDAO();
 		List<FoodModel> listFoot = dao.findListFoot();
 		request.setAttribute("listFood", listFoot);
