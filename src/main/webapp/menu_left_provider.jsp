@@ -33,10 +33,10 @@
 				<h3 class="menu-title">Manage Admin System</h3>
 				<!-- /.menu-title -->
 
-				<li><a href="${pageContext.servletContext.contextPath}/food_manage">Quản
+				<li><a href="${pageContext.servletContext.contextPath}/food_provider">Quản
 						lí thực phẩm</a></li>
-				<li><a href="${pageContext.servletContext.contextPath}/manage">
-						Nhà quản lí thực phẩm </a></li>
+				<li><a href="${pageContext.servletContext.contextPath}/provider">
+						Nhà quản cung cấp thực phẩm </a></li>
 
 			</ul>
 		</div>
