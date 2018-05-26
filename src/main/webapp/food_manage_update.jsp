@@ -1,7 +1,7 @@
-<%@page import="dao.ManageDAO"%>
-<%@page import="model.ManageModel"%>
+<%@page import="dao.FoodDAO"%>
+<%@page import="model.FoodModel"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -18,43 +18,35 @@
 	<%@ include file="header.jsp"%>
 	<div class="row">
 		<div class='col-sm-4' style="margin-top: 15px">
-			<%@ include file="menu_left.jsp"%>
+			<%@ include file="menu_left_manage.jsp"%>
 		</div>
 		<div class="col-sm-8" style="margin-top: 15px">
-			<h3 style="text-align: center">Chỉnh sửa thông tin nhà quản lí
-				thực phẩm</h3>
-			<form method="post" action="manage_update">
+		<h3 style="text-align:center">Chỉnh sửa thông tin loại thực phẩm</h3>
+			<form method="post" action="food_manage_update" style= "margin-top: 20px">
 				<%
-					int id = Integer.valueOf(request.getAttribute("idManage").toString());
-					ManageModel manage = new ManageDAO().getManageById(id);
+					int id = Integer.valueOf(request.getAttribute("idFood").toString());
+					FoodModel food = new FoodDAO().getFoodById(id);
 				%>
 				<div class="col-md-12" hidden>
-					<div class="col-md-4">Mã nhà cung cấp thực phẩm :</div>
+					<div class="col-md-4">Mã thực phẩm:</div>
 					<div class="col-md-8">
-						<input type="text" name="idManage"
-							value="<%=manage.getIdManage()%>" />
+						<input  type="text" name="idFood"
+							value="<%=food.getIdFood()%>" />
 					</div>
 					<br />
 				</div>
 				<div class="col-md-12">
-					<div class="col-md-4">Tên nhà cung cấp thực phẩm :</div>
+					<div class="col-md-4">Tên thực phẩm:</div>
 					<div class="col-md-8">
-						<input type="text" name="nameManage"
-							value="<%=manage.getNameManage()%>" />
+						<input type="text" name="nameFood"
+							value="<%=food.getNameFoot()%>" />
 					</div>
 					<br />
 				</div>
 				<div class="col-md-12">
-					<div class="col-md-4">Địa chỉ:</div>
+					<div class="col-md-4">Ghi chú:</div>
 					<div class="col-md-8">
-						<input type="text" name="address" value="<%=manage.getAddress()%>" />
-					</div>
-					<br />
-				</div>
-				<div class="col-md-12">
-					<div class="col-md-4">Số điện thoại:</div>
-					<div class="col-md-8">
-						<input type="text" name="phone" value="<%=manage.getPhone()%>" />
+						<input type="text" name="note" value="<%=food.getNote()%>" />
 					</div>
 					<br />
 				</div>

@@ -15,7 +15,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<form action="foodDetail" method="get">
+	<form action="food_detail_manage" method="get">
 		<%@ include file="header.jsp"%>
 			<div class="row">
 				<div class='col-sm-3' style="margin-top: 15px">
@@ -56,7 +56,7 @@
 							<td><%=nameFootDetail%></td>
 							<td><%=note%></td>
 							<td><%=number%></td>
-							<td  hidden = "true"><%=codeQR%></td>
+							<td><%=codeQR%></td>
 							<td><img src="<%=image%>" style="width: 150px; height: 150px"></td>
 							<td><a href="foodDetail?action=showTem&id=<%=idFood %>&idFoodDetail=<%=idFootDetail%>">Hiển thị tem</a></td>
 							<td hidden><a href="foodDetail?action=delete&id=<%=idFood %>&idFoodDetail=<%=idFootDetail%>" >Xóa</a>

@@ -32,9 +32,7 @@ public class FoodProviderController extends HttpServlet {
 	private void loadDataWeb(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String basePath = "food_provider.jsp";
-		Object obj = request.getAttribute("role_value");
-		int roleValue = Integer.parseInt(obj.toString());
-		request.setAttribute("role_value", roleValue);
+		request.setAttribute("role_value", 1);
 		FoodDAO dao = new FoodDAO();
 		List<FoodModel> listFoot = dao.findListFoot();
 		request.setAttribute("listFood", listFoot);

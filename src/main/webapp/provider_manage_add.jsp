@@ -21,7 +21,7 @@
 		</div>
 		<div class="col-sm-9" style="margin-top: 15px">
 		<h3 style="text-align:center">Thêm nhà cung cấp mới</h3>
-			<form method="post" action="provider_add">
+			<form method="post" action="provider_manage_add">
 				<div class="col-md-12">
 					<div class="col-md-4" name="nameProvider">Tên nhà cung cấp
 						thực phẩm :</div>

@@ -44,15 +44,15 @@
 								else if (roleValue == 1)
 									hrefController = "./food_detail_provider?&id=";
 								else
-									hrefController = "./foodDetailManage?&id=";
+									hrefController = "./food_detail_manage?&id=";
 					%>
 					<tr>
 						<td><%=model.getIdFood()%></td>
 						<td><%=model.getNameFoot()%></td>
 						<td><%=model.getNote()%></td>
 						<td><a href=<%=hrefController + foodId%>>Xem chi tiết </a></td>
-						<td><a href="food?action=delete&id=<%=model.getIdFood()%>">Xóa</a>
-							<a href="food?action=update&id=<%=model.getIdFood()%>">Sửa</a></td>
+						<td><a href="food_manage?action=delete&id=<%=model.getIdFood()%>">Xóa</a>
+							<a href="food_manage?action=update&id=<%=model.getIdFood()%>">Sửa</a></td>
 					</tr>
 
 
@@ -64,7 +64,7 @@
 
 				</table>
 				<div style="margin-top: 10px">
-					<a href="food?action=add">Thêm một loại thực phẩm</a>
+					<a href="food_manage?action=add">Thêm một loại thực phẩm</a>
 				</div>
 			</div>
 		</div>

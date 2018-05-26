@@ -11,12 +11,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.FoodDAO;
-import model.FoodModel;
+import dao.ManageDAO;
+import model.ManageModel;
 
-public class FoodManageController extends HttpServlet {
+public class Manage2Controller extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
+
+	public Manage2Controller() {
+		super();
+	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -26,18 +30,17 @@ public class FoodManageController extends HttpServlet {
 		} else {
 			System.out.println("Condition true");
 		}
-
 	}
 
 	private void loadDataWeb(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String basePath = "food_manage.jsp";
-		request.setAttribute("role_value", 2);
-		FoodDAO dao = new FoodDAO();
-		List<FoodModel> listFoot = dao.findListFoot();
-		request.setAttribute("listFood", listFoot);
+		String basePath = "manage2.jsp";
+		ManageDAO dao = new ManageDAO();
+		List<ManageModel> listManage = dao.findListManage();
+		request.setAttribute("listManage", listManage);
 		RequestDispatcher view = request.getRequestDispatcher(basePath);
 		view.forward(request, response);
+
 	}
 
 	private boolean checkQueryString(HttpServletRequest request, HttpServletResponse response)
@@ -60,41 +63,39 @@ public class FoodManageController extends HttpServlet {
 		}
 
 		if (mapQuery.get("action").toLowerCase().equals("delete")) {
-			deleteFood(mapQuery.get("id"), request, response);
+			deleteManage(mapQuery.get("id"), request, response);
 		}
 		if (mapQuery.get("action").toLowerCase().equals("add")) {
-			addFood(request, response);
+			addManage(request, response);
 		}
 		if (mapQuery.get("action").toLowerCase().equals("update")) {
-			updateFood(mapQuery.get("id"), request, response);
+			updateManage(mapQuery.get("id"), request, response);
 		}
 		return true;
 	}
 
-	private void updateFood(String id, HttpServletRequest request, HttpServletResponse response)
+	private void updateManage(String id, HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		FoodDAO dao = new FoodDAO();
-		FoodModel model = new FoodModel();
-		dao.updateFood(model);
+		ManageDAO dao = new ManageDAO();
+		ManageModel model = new ManageModel();
+		dao.updateManage(model);
 		;
-		RequestDispatcher rd = request.getRequestDispatcher("food_manage_update.jsp");
-		request.setAttribute("idFood", id);
+		RequestDispatcher rd = request.getRequestDispatcher("manage_update.jsp");
+		request.setAttribute("idManage", id);
 		rd.forward(request, response);
-
 	}
 
-	private void addFood(HttpServletRequest request, HttpServletResponse response)
+	private void addManage(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("food_manage_add.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("manage_add.jsp");
 		rd.forward(request, response);
-
 	}
 
-	private void deleteFood(String id, HttpServletRequest request, HttpServletResponse response) throws IOException {
-		FoodDAO dao = new FoodDAO();
-		dao.deleteFood(Integer.parseInt(id));
+	private void deleteManage(String id, HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		ManageDAO dao = new ManageDAO();
+		dao.deleteManage(Integer.parseInt(id));
 		response.sendRedirect(request.getRequestURL().toString());
-
 	}
 
 	private boolean checkCondition(Map<String, String> mapQuery) {

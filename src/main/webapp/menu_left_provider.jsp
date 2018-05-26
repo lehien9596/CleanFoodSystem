@@ -35,7 +35,7 @@
 
 				<li><a href="${pageContext.servletContext.contextPath}/food_manage">Quản
 						lí thực phẩm</a></li>
-				<li><a href="${pageContext.servletContext.contextPath}/manage2">
+				<li><a href="${pageContext.servletContext.contextPath}/manage">
 						Nhà quản lí thực phẩm </a></li>
 
 			</ul>

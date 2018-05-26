@@ -11,10 +11,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.FoodDAO;
-import model.FoodModel;
+import dao.ProviderDAO;
+import model.ProviderModel;
 
-public class FoodManageController extends HttpServlet {
+public class ProviderManageController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
@@ -26,16 +26,14 @@ public class FoodManageController extends HttpServlet {
 		} else {
 			System.out.println("Condition true");
 		}
-
 	}
 
 	private void loadDataWeb(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String basePath = "food_manage.jsp";
-		request.setAttribute("role_value", 2);
-		FoodDAO dao = new FoodDAO();
-		List<FoodModel> listFoot = dao.findListFoot();
-		request.setAttribute("listFood", listFoot);
+		String basePath = "provider_manage.jsp";
+		ProviderDAO dao = new ProviderDAO();
+		List<ProviderModel> listProvider = dao.findListProvider();
+		request.setAttribute("listProvider", listProvider);
 		RequestDispatcher view = request.getRequestDispatcher(basePath);
 		view.forward(request, response);
 	}
@@ -60,41 +58,15 @@ public class FoodManageController extends HttpServlet {
 		}
 
 		if (mapQuery.get("action").toLowerCase().equals("delete")) {
-			deleteFood(mapQuery.get("id"), request, response);
+			deleteProvider(mapQuery.get("id"), request, response);
 		}
 		if (mapQuery.get("action").toLowerCase().equals("add")) {
-			addFood(request, response);
+			addProvider(request, response);
 		}
 		if (mapQuery.get("action").toLowerCase().equals("update")) {
-			updateFood(mapQuery.get("id"), request, response);
+			updateProvider(mapQuery.get("id"), request, response);
 		}
 		return true;
-	}
-
-	private void updateFood(String id, HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		FoodDAO dao = new FoodDAO();
-		FoodModel model = new FoodModel();
-		dao.updateFood(model);
-		;
-		RequestDispatcher rd = request.getRequestDispatcher("food_manage_update.jsp");
-		request.setAttribute("idFood", id);
-		rd.forward(request, response);
-
-	}
-
-	private void addFood(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("food_manage_add.jsp");
-		rd.forward(request, response);
-
-	}
-
-	private void deleteFood(String id, HttpServletRequest request, HttpServletResponse response) throws IOException {
-		FoodDAO dao = new FoodDAO();
-		dao.deleteFood(Integer.parseInt(id));
-		response.sendRedirect(request.getRequestURL().toString());
-
 	}
 
 	private boolean checkCondition(Map<String, String> mapQuery) {
@@ -110,9 +82,32 @@ public class FoodManageController extends HttpServlet {
 		return true;
 	}
 
+	private void deleteProvider(String id, HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		ProviderDAO dao = new ProviderDAO();
+		dao.deleteProvider(Integer.parseInt(id));
+		System.out.println("delete oke !");
+		response.sendRedirect(request.getRequestURL().toString());
+	}
+
+	private void addProvider(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		//Chuyen sang trang provider_add
+		RequestDispatcher rd = request.getRequestDispatcher("provider_manage_add.jsp");
+		rd.forward(request, response);
+	}
+	private void updateProvider(String id, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		ProviderDAO dao = new ProviderDAO();
+		ProviderModel model = new ProviderModel();
+		dao.updateProvider(model);
+		RequestDispatcher rd = request.getRequestDispatcher("provider_manage_update.jsp");
+		request.setAttribute("idProvider", id);
+		rd.forward(request, response);
+	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		doGet(request, response);
+
 	}
 
 }

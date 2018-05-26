@@ -17,9 +17,7 @@
 	<form action='foodDetailAdd' method="post"  enctype="multipart/form-data" >
 		<%@ include file="header.jsp"%>
 		<div class="row">
-			<div class='col-sm-3' style="margin-top: 15px">
-				<%@ include file="menu_left.jsp"%>
-			</div>
+		
 			<div class="col-sm-9" style="margin-top: 15px">
 				<h3 style="text-align:center">Thêm một thực phẩm mới</h3>
 				<div class="col-md-12">

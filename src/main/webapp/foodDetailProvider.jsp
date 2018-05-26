@@ -19,7 +19,7 @@
 		<%@ include file="header.jsp"%>
 			<div class="row">
 				<div class='col-sm-3' style="margin-top: 15px">
-					<%@ include file="menu_left_manage.jsp"%>
+					<%@ include file="menu_left_provider.jsp"%>
 				</div>
 				<div class="col-sm-9" style="margin-top: 15px">
 					<table class="data-table">

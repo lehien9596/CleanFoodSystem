@@ -44,7 +44,7 @@
 								else if (roleValue == 1)
 									hrefController = "./food_detail_provider?&id=";
 								else
-									hrefController = "./foodDetailManage?&id=";
+									hrefController = "./food_detail_manage?&id=";
 					%>
 					<tr>
 						<td><%=model.getIdFood()%></td>
