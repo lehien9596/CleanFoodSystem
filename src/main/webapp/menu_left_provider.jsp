@@ -35,8 +35,8 @@
 
 				<li><a href="${pageContext.servletContext.contextPath}/food_provider">Quản
 						lí thực phẩm</a></li>
-				<li><a href="${pageContext.servletContext.contextPath}/provider">
-						Nhà quản cung cấp thực phẩm </a></li>
+				<li><a href="${pageContext.servletContext.contextPath}/provider2">
+						Nhà cung cấp thực phẩm </a></li>
 
 			</ul>
 		</div>

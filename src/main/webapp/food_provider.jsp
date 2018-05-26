@@ -51,8 +51,8 @@
 						<td><%=model.getNameFoot()%></td>
 						<td><%=model.getNote()%></td>
 						<td><a href=<%=hrefController + foodId%>>Xem chi tiết </a></td>
-						<td><a href="food?action=delete&id=<%=model.getIdFood()%>">Xóa</a>
-							<a href="food?action=update&id=<%=model.getIdFood()%>">Sửa</a></td>
+						<td><a href="food_provider?action=delete&id=<%=model.getIdFood()%>">Xóa</a>
+							<a href="food_provider?action=update&id=<%=model.getIdFood()%>">Sửa</a></td>
 					</tr>
 
 
@@ -64,7 +64,7 @@
 
 				</table>
 				<div style="margin-top: 10px">
-					<a href="food?action=add">Thêm một loại thực phẩm</a>
+					<a href="food_provider?action=add">Thêm một loại thực phẩm</a>
 				</div>
 			</div>
 		</div>

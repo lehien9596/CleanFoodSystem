@@ -19,7 +19,7 @@ public class MysqlConnector {
 	private BasicDataSource connectionPool = null;
 	private Connection conn = null;
 	private final String USERNAME = "root";// dien user name cua em
-	private final String PASSWORD = "123456"; // dien password cua em
+	private final String PASSWORD = "silencer&&55"; // dien password cua em
 	private final String DRIVER = "com.mysql.jdbc.Driver";
 	private final String URL = "jdbc:mysql://localhost:3306/hethongtruyxuat?useUnicode=true&characterEncoding=UTF-8&useSSL=false";
 	private final int MAX_IDLE = 10;

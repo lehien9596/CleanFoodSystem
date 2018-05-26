@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	id="WebApp_ID" version="3.0">
 	<display-name>CleanFoodSystem</display-name>
@@ -218,7 +219,7 @@
 		<servlet-name>ShowTemController</servlet-name>
 		<url-pattern>/tem</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet-mapping>
 		<servlet-name>FoodManageAddController</servlet-name>
 		<url-pattern>/food_manage_add</url-pattern>
@@ -227,8 +228,8 @@
 		<servlet-name>FoodManageAddController</servlet-name>
 		<servlet-class>controller.FoodManageAddController</servlet-class>
 	</servlet>
-	
-		<servlet-mapping>
+
+	<servlet-mapping>
 		<servlet-name>FoodManageUpdateController</servlet-name>
 		<url-pattern>/food_manage_update</url-pattern>
 	</servlet-mapping>
@@ -236,7 +237,7 @@
 		<servlet-name>FoodManageUpdateController</servlet-name>
 		<servlet-class>controller.FoodManageUpdateController</servlet-class>
 	</servlet>
-	
+
 	<servlet>
 		<servlet-name>ProviderManageController</servlet-name>
 		<servlet-class>controller.ProviderManageController</servlet-class>
@@ -245,7 +246,7 @@
 		<servlet-name>ProviderManageController</servlet-name>
 		<url-pattern>/provider_manage</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>ProviderManageAddController</servlet-name>
 		<servlet-class>controller.ProviderManageAddController</servlet-class>
@@ -254,8 +255,24 @@
 		<servlet-name>ProviderManageAddController</servlet-name>
 		<url-pattern>/provider_manage_add</url-pattern>
 	</servlet-mapping>
-	
-<servlet>
+
+	<servlet>
+		<servlet-name>Manage2AddController</servlet-name>
+		<servlet-class>controller.Manage2AddController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Manage2AddController</servlet-name>
+		<url-pattern>/manage2_add</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Manage2UpdateController</servlet-name>
+		<servlet-class>controller.Manage2UpdateController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Manage2UpdateController</servlet-name>
+		<url-pattern>/manage2_update</url-pattern>
+	</servlet-mapping>
+	<servlet>
 		<servlet-name>ProviderManageUpdateController</servlet-name>
 		<servlet-class>controller.ProviderManageUpdateController</servlet-class>
 	</servlet>
@@ -263,7 +280,47 @@
 		<servlet-name>ProviderManageUpdateController</servlet-name>
 		<url-pattern>/provider_manage_update</url-pattern>
 	</servlet-mapping>
-	
+	<servlet>
+		<servlet-name>FoodProviderAddController</servlet-name>
+		<servlet-class>controller.FoodProviderAddController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FoodProviderAddController</servlet-name>
+		<url-pattern>/food_provider_add</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>FoodProviderUpdateController</servlet-name>
+		<servlet-class>controller.FoodProviderUpdateController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FoodProviderUpdateController</servlet-name>
+		<url-pattern>/food_provider_update</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Provider2Controller</servlet-name>
+		<servlet-class>controller.Provider2Controller</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Provider2Controller</servlet-name>
+		<url-pattern>/provider2</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Provider2AddController</servlet-name>
+		<servlet-class>controller.Provider2AddController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Provider2AddController</servlet-name>
+		<url-pattern>/provider2_add</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Provider2UpdateController</servlet-name>
+		<servlet-class>controller.Provider2UpdateController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Provider2UpdateController</servlet-name>
+		<url-pattern>/provider2_update</url-pattern>
+	</servlet-mapping>
 	<jsp-config>
 		<jsp-property-group>
 			<url-pattern>*.jsp</url-pattern>

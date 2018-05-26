@@ -80,14 +80,14 @@ public class Manage2Controller extends HttpServlet {
 		ManageModel model = new ManageModel();
 		dao.updateManage(model);
 		;
-		RequestDispatcher rd = request.getRequestDispatcher("manage_update.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("manage2_update.jsp");
 		request.setAttribute("idManage", id);
 		rd.forward(request, response);
 	}
 
 	private void addManage(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("manage_add.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("manage2_add.jsp");
 		rd.forward(request, response);
 	}
 

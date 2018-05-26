@@ -47,8 +47,8 @@
 						<td><%=model.getAddress()%></td>
 						<td><%=model.getPhone()%></td>
 						<td><a
-							href="manage?action=delete&id=<%=model.getIdManage()%>">Xóa</a> <a
-							href="manage?action=update&id=<%=model.getIdManage()%>">Sửa</a></td>
+							href="manage2?action=delete&id=<%=model.getIdManage()%>">Xóa</a> <a
+							href="manage2?action=update&id=<%=model.getIdManage()%>">Sửa</a></td>
 					</tr>
 					<%
 						}
@@ -56,7 +56,7 @@
 					%></tr>
 				</table>
 				<div style="margin-top: 10px">
-					<a href="manage?action=add">Thêm nhà quản lí mới</a>
+					<a href="manage2?action=add">Thêm nhà quản lí mới</a>
 				</div>
 			</form>
 		</div>
