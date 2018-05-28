@@ -34,7 +34,7 @@ public class FoodManageController extends HttpServlet {
 		String basePath = "food_manage.jsp";
 		request.setAttribute("role_value", 2);
 		FoodDAO dao = new FoodDAO();
-		List<FoodModel> listFoot = dao.findListFoot();
+		List<FoodModel> listFoot = dao.findListFood();
 		request.setAttribute("listFood", listFoot);
 		RequestDispatcher view = request.getRequestDispatcher(basePath);
 		view.forward(request, response);

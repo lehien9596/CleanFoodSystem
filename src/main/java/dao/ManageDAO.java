@@ -41,14 +41,43 @@ public class ManageDAO {
 		return listManage;
 	}
 
-	public void addManage(ManageModel manageModel) {
+	public List<ManageModel> findListManage(int idUser) {
+		List<ManageModel> listManage = new ArrayList<ManageModel>();
+		connect = instance.getDataBaseConnectionPool();
+		PreparedStatement pstm = null;
+		ResultSet rs = null;
+		try {
+			pstm = connect.prepareStatement("SELECT * FROM manage WHERE idUser =?");
+			pstm.setInt(1, idUser);
+			rs = pstm.executeQuery();
+			while (rs.next()) {
+				int idManage = rs.getInt("idManage");
+				String nameManage = rs.getString("nameManage");
+				String address = rs.getString("address");
+				String phone = rs.getString("phone");
+				ManageModel nc = new ManageModel(idManage, nameManage, address, phone);
+				listManage.add(nc);
+			}
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		} finally {
+			instance.closeResulset(rs);
+			instance.closePrepareStatement(pstm);
+			instance.closeConnection(connect);
+		}
+		return listManage;
+	}
+
+	public void addManage(ManageModel manageModel, int idUser) {
 		PreparedStatement pstm = null;
 		try {
 			connect = instance.getDataBaseConnectionPool();
-			pstm = connect.prepareStatement("insert into manage(nameManage,address,phone) values (?, ?, ? )");
+			pstm = connect.prepareStatement("insert into manage(nameManage,address,phone) values (?, ?, ?, ? )");
 			pstm.setString(1, manageModel.getNameManage());
 			pstm.setString(2, manageModel.getAddress());
 			pstm.setString(3, manageModel.getPhone());
+			pstm.setInt(4, idUser);
 			pstm.executeUpdate();
 
 		} catch (SQLException e) {

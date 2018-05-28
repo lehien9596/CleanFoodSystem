@@ -32,7 +32,8 @@ public class ProviderManageController extends HttpServlet {
 			throws ServletException, IOException {
 		String basePath = "provider_manage.jsp";
 		ProviderDAO dao = new ProviderDAO();
-		List<ProviderModel> listProvider = dao.findListProvider();
+		int idUser = Integer.parseInt(request.getSession().getAttribute("id_user").toString());
+		List<ProviderModel> listProvider = dao.findListProvider(idUser);
 		request.setAttribute("listProvider", listProvider);
 		RequestDispatcher view = request.getRequestDispatcher(basePath);
 		view.forward(request, response);
@@ -92,12 +93,14 @@ public class ProviderManageController extends HttpServlet {
 
 	private void addProvider(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		//Chuyen sang trang provider_add
+		// Chuyen sang trang provider_add
 		RequestDispatcher rd = request.getRequestDispatcher("provider_manage_add.jsp");
 		rd.forward(request, response);
 	}
-	private void updateProvider(String id, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
+	private void updateProvider(String id, HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		ProviderDAO dao = new ProviderDAO();
 		ProviderModel model = new ProviderModel();
 		dao.updateProvider(model);
@@ -105,6 +108,7 @@ public class ProviderManageController extends HttpServlet {
 		request.setAttribute("idProvider", id);
 		rd.forward(request, response);
 	}
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 

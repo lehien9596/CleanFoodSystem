@@ -13,14 +13,14 @@ public class LoginDAO {
 	private Connection connect = null;
 	private MysqlConnector instance = MysqlConnector.getInstance();
 
-	public Map<String, Integer> login(UserModel user) {
-		Map<String, Integer> map = new HashMap<>();
+	public Map<Integer, Integer> login(UserModel user) {
+		Map<Integer, Integer> map = new HashMap<>();
 		PreparedStatement pstm = null;
 		ResultSet rs = null;
 		try {
 			connect = instance.getDataBaseConnectionPool();
-			pstm = connect
-					.prepareStatement("SELECT nameUser, password, role FROM user WHERE nameUser =? AND password =?");
+			pstm = connect.prepareStatement(
+					"SELECT nameUser, password, role, idUser FROM user WHERE nameUser =? AND password =?");
 			pstm.setString(1, user.getNameUser());
 			pstm.setString(2, user.getPassword());
 			rs = pstm.executeQuery();
@@ -28,7 +28,7 @@ public class LoginDAO {
 				String username = rs.getString("nameUser");
 				String password = rs.getString("password");
 				if (username.equals(user.getNameUser()) && password.equals(user.getPassword())) {
-					map.put("role", rs.getInt("role"));
+					map.put(rs.getInt("idUser"), rs.getInt("role"));
 					break;
 				}
 			}

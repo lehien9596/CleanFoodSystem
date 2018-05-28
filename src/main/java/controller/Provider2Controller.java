@@ -32,7 +32,8 @@ public class Provider2Controller extends HttpServlet {
 			throws ServletException, IOException {
 		String basePath = "provider2.jsp";
 		ProviderDAO dao = new ProviderDAO();
-		List<ProviderModel> listProvider = dao.findListProvider();
+		int idUser= Integer.parseInt(request.getSession().getAttribute("id_user").toString());
+		List<ProviderModel> listProvider = dao.findListProvider(idUser);
 		request.setAttribute("listProvider", listProvider);
 		RequestDispatcher view = request.getRequestDispatcher(basePath);
 		view.forward(request, response);

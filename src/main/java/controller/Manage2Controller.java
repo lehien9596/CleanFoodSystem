@@ -36,7 +36,8 @@ public class Manage2Controller extends HttpServlet {
 			throws ServletException, IOException {
 		String basePath = "manage2.jsp";
 		ManageDAO dao = new ManageDAO();
-		List<ManageModel> listManage = dao.findListManage();
+		int idUser = Integer.parseInt(request.getSession().getAttribute("id_user").toString());
+		List<ManageModel> listManage = dao.findListManage(idUser);
 		request.setAttribute("listManage", listManage);
 		RequestDispatcher view = request.getRequestDispatcher(basePath);
 		view.forward(request, response);

@@ -14,7 +14,7 @@ public class FoodDAO {
 	private Connection connect = null;
 	private MysqlConnector instance = MysqlConnector.getInstance();
 
-	public List<FoodModel> findListFoot() {
+	public List<FoodModel> findListFood() {
 		List<FoodModel> listFoot = new ArrayList<FoodModel>();
 		connect = instance.getDataBaseConnectionPool();
 		PreparedStatement pstm = null;

@@ -32,7 +32,8 @@ public class ProviderManageAddController extends HttpServlet {
 		String phone = request.getParameter("phone");
 		ProviderModel providerModel = new ProviderModel(0, name, address, phone);
 		ProviderDAO dao = new ProviderDAO();
-		dao.addProvider(providerModel);
+		int idUser =Integer.parseInt(request.getSession().getAttribute("id_user").toString());
+		dao.addProvider(providerModel, idUser);
 		response.sendRedirect("provider_manage");
 	}
 
